@@ -28,30 +28,30 @@ module Teamwork
 
     def taskList(id, params:{})
       response = @connection.get "todo_lists/#{id}.json", params
-      response.body
+      response.body['todo-list']
     end
 
     def projectTaskLists(id, params:{})
       response = @connection.get "projects/#{id}/todo_lists.json", params
-      response.body
+      response.body['todo-lists']
     end
 
     # GET /tasks/{id}.json
     def task(id, params:{})
       response = @connection.get "tasks/#{id}.json", params
-      response.body
+      response.body['todo-item']
     end
 
     # GET /tasklists/{id}/tasks.json
     def taskListTasks(id, params:{})
       response = @connection.get "tasklists/#{id}/tasks.json", params
-      response.body
+      response.body['todo-items']
     end
 
 
     def person(id, params:{})
       response = @connection.get "people/#{id}.json", params
-      response.body
+      response.body['person']
     end
 
     # TODO: the rest...
