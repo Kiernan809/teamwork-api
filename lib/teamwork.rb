@@ -4,6 +4,10 @@ require 'faraday_middleware'
 require 'json'
 
 module Teamwork
+  class Requester
+    # Instance of requesty.
+  end
+
 
   class API
     def initialize(company, api_key)
@@ -23,35 +27,35 @@ module Teamwork
 
     def activity(params:{})
       response = @connection.get "latestActivity.json", params
-      response.body
+      response.body["activity"]
     end
 
     def taskList(id, params:{})
       response = @connection.get "todo_lists/#{id}.json", params
-      response.body['todo-list']
+      response.body["todo-lists"]
     end
 
     def projectTaskLists(id, params:{})
       response = @connection.get "projects/#{id}/todo_lists.json", params
-      response.body['todo-lists']
+      response.body["todo-lists"]
     end
 
     # GET /tasks/{id}.json
     def task(id, params:{})
       response = @connection.get "tasks/#{id}.json", params
-      response.body['todo-item']
+      response.body["todo-items"]
     end
 
     # GET /tasklists/{id}/tasks.json
     def taskListTasks(id, params:{})
       response = @connection.get "tasklists/#{id}/tasks.json", params
-      response.body['todo-items']
+      response.body["todo-items"]
     end
 
 
     def person(id, params:{})
       response = @connection.get "people/#{id}.json", params
-      response.body['person']
+      response.body["person"]
     end
 
     # TODO: the rest...
