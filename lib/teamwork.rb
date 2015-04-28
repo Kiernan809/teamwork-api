@@ -58,6 +58,14 @@ module Teamwork
       response.body["person"]
     end
 
+    def project(id, params = {})
+      response = @connection.get "projects/#{id}.json", params
+      response.body["project"]
+    end
+
     # TODO: the rest...
+    def projets(params = {})
+    end
+
   end
 end
