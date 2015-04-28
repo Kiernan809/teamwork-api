@@ -25,35 +25,35 @@ module Teamwork
       end
     end
 
-    def activity(params:{})
+    def activity(params = {})
       response = @connection.get "latestActivity.json", params
       response.body["activity"]
     end
 
-    def taskList(id, params:{})
+    def taskList(id, params = {})
       response = @connection.get "todo_lists/#{id}.json", params
       response.body["todo-list"]
     end
 
-    def projectTaskLists(id, params:{})
+    def projectTaskLists(id, params = {})
       response = @connection.get "projects/#{id}/todo_lists.json", params
       response.body["todo-lists"]
     end
 
     # GET /tasks/{id}.json
-    def task(id, params:{})
+    def task(id, params = {})
       response = @connection.get "tasks/#{id}.json", params
       response.body["todo-item"]
     end
 
     # GET /tasklists/{id}/tasks.json
-    def taskListTasks(id, params:{})
+    def taskListTasks(id, params = {})
       response = @connection.get "tasklists/#{id}/tasks.json", params
       response.body["todo-items"]
     end
 
 
-    def person(id, params:{})
+    def person(id, params = {})
       response = @connection.get "people/#{id}.json", params
       response.body["person"]
     end
