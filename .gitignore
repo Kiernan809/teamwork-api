@@ -9,3 +9,5 @@
 /tmp/
 
 *.gem
+
+local.log
