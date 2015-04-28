@@ -32,7 +32,7 @@ module Teamwork
 
     def taskList(id, params:{})
       response = @connection.get "todo_lists/#{id}.json", params
-      response.body["todo-lists"]
+      response.body["todo-list"]
     end
 
     def projectTaskLists(id, params:{})
