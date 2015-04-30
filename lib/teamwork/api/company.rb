@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Company
+    module Company
       # http://developer.teamwork.com/companies
       class << self
         # POST /companies.json

@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Activity
+    module Activity
       # http://developer.teamwork.com/activity
       class << self
         # GET /latestActivity.json
@@ -22,3 +22,4 @@ module Teamwork
     end
   end
 end
+

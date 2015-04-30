@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Task
+    module Task
       # http://developer.teamwork.com/todolistitems
       class << self
 

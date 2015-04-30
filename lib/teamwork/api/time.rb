@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Time
+    module Time
       # http://developer.teamwork.com/timetracking
       class << self
         # GET /time_entries.json

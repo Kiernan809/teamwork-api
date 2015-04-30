@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Message
+    module Message
       # http://developer.teamwork.com/messages
       class << self
         # POST /projects/{project_id}/posts.json
@@ -16,7 +16,7 @@ module Teamwork
       end
     end
 
-    class Reply
+    module Reply
       # http://developer.teamwork.com/messagereplies
       class << self
         # POST /messages/{message_id}/messageReplies.json

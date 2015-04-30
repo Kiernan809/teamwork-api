@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Events
+    module Events
       # http://developer.teamwork.com/events
       class << self
         # GET /calendarevents.json?startdate=YYYYMMDD&endDate=YYYYMMDD

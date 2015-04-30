@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Project
+    module Project
       # http://developer.teamwork.com/projectsapi
       class << self
         # GET /projects.json
@@ -29,7 +29,7 @@ module Teamwork
       end
     end
 
-    class Role
+    module Role
       # http://developer.teamwork.com/projectroles
       class << self
         # GET /projects/{id}/roles.json
@@ -44,7 +44,7 @@ module Teamwork
       end
     end
 
-    class Email
+    module Email
       # http://developer.teamwork.com/projectemailaddresses
       class << self
         # GET /projects/{id}/emailaddress.json

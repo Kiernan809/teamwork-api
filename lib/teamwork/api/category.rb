@@ -1,7 +1,7 @@
 module Teamwork
   module API
     module Category
-      class Message
+      module Message
         # http://developer.teamwork.com/messagecategories
         class << self
           # POST /projects/#{project_id}/messageCategories.json
@@ -17,7 +17,7 @@ module Teamwork
         end
       end
 
-      class File
+      module File
         # http://developer.teamwork.com/filecategories
         class << self
           # POST /projects/#{project_id}/fileCategories.json
@@ -34,7 +34,7 @@ module Teamwork
 
       end
 
-      class Notebook
+      module Notebook
         # http://developer.teamwork.com/notebookcategories
         class << self
           # POST /projects/#{project_id}/notebookCategories.json
@@ -50,7 +50,7 @@ module Teamwork
         end
       end
 
-      class Link
+      module Link
         # http://developer.teamwork.com/linkcategories
         class << self
           # POST /projects/#{project_id}/linkCategories.json
@@ -66,7 +66,7 @@ module Teamwork
         end
       end
 
-      class Project
+      module Project
         # http://developer.teamwork.com/projectcategories
         class << self
           # POST /projectcategories.json

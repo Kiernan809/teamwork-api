@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class People
+    module People
       # http://developer.teamwork.com/people
       class << self
         # POST /people.json
@@ -15,7 +15,7 @@ module Teamwork
       end
     end
 
-    class Status
+    module Status
       # http://developer.teamwork.com/people-status
       class << self
         # POST /me/status.json

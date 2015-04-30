@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Milestone
+    module Milestone
       # http://developer.teamwork.com/milestones
       class << self
         # GET /milestones.json

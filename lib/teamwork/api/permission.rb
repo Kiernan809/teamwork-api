@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Permission
+    module Permission
       # http://developer.teamwork.com/permissions
       class << self
         # POST /projects/{id}/people/{id}.json

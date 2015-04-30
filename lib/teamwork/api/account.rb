@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Account
+    module Account
     end
   end
 end

@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class List
+    module List
       # http://developer.teamwork.com/tasklists
       class << self
 

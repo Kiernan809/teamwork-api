@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Link
+    module Link
       # http://developer.teamwork.com/links
       class << self
         # GET /links.json

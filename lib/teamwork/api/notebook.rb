@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Notebook
+    module Notebook
       # http://developer.teamwork.com/notebooks
       class << self
         # GET /notebooks.json

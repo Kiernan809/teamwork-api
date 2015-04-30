@@ -1,6 +1,6 @@
 module Teamwork
   module API
-    class Comment
+    module Comment
       # http://developer.teamwork.com/comments
 
       class << self
