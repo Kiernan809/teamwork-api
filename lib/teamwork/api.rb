@@ -1,3 +1,4 @@
+require 'logger'
 require 'faraday'
 require 'faraday_middleware'
 require 'json'
@@ -6,26 +7,33 @@ module Teamwork
   module API
     class << self
       attr_accessor :configuration
-    end
 
-    def self.config
-      @configuration ||= Configuration.new
-      yield(@configuration) if block_given?
-      @configuration.connect
-    end
+      def config
+        @configuration ||= Configuration.new
 
-    def logger
-      @logger ||= Logger.new @configuration.logger
+        yield(@configuration) if block_given?
+
+        @configuration.connect
+      end
+
+      def get(url, params = {})
+        config.get url, params
+      end
+
+      def log
+        @logger ||= Logger.new @configuration.logger
+      end
     end
 
     class Configuration
-      attr_accessor :company, :api_key, :connection
+      attr_accessor :company, :api_key, :connection, :logger
 
       def initialize
-        @logger = 'info'
+        @logger = 'API.log'
         @company = nil
         @api_key = nil
       end
+
       def connect
         @connection ||= Faraday.new url: "http://#{@company}.teamwork.com/" do |con|
           con.request :multipart
@@ -44,8 +52,8 @@ module Teamwork
   end
 end
 
-require './teamwork-api/lib/teamwork/api'
-z = Teamwork::API.config do |c|
-  c.company = ENV["TEAMWORK_COMPANY"]
-  c.api_key = ENV["TEAMWORK_API_KEY"]
-end
+# require './teamwork-api/lib/teamwork/api'
+# z = Teamwork::API.config do |c|
+#   c.company = ENV["TEAMWORK_COMPANY"]
+#   c.api_key = ENV["TEAMWORK_API_KEY"]
+# end

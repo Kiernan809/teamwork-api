@@ -36,3 +36,9 @@ module Teamwork
     end
   end
 end
+
+
+  #   def person(id, params = {})
+  #     response = @connection.get "people/#{id}.json", params
+  #     response.body["person"]
+  #   end
