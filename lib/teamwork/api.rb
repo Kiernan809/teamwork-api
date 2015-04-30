@@ -22,7 +22,7 @@ module Teamwork
       attr_accessor :configuration
 
       def config
-        @configuration ||= Configuration.new
+        @configuration ||= Client.new
 
         yield(@configuration) if block_given?
 
@@ -38,7 +38,7 @@ module Teamwork
       end
     end
 
-    class Configuration
+    class Client
       attr_accessor :company, :api_key, :connection, :logger
 
       def initialize
@@ -58,15 +58,12 @@ module Teamwork
           con.headers[:cache_control] = 'no-cache'
           con.basic_auth(@api_key, '')
         end
+      end
 
+      def respond
       end
 
     end
   end
 end
 
-# require './teamwork-api/lib/teamwork/api'
-# z = Teamwork::API.config do |c|
-#   c.company = ENV["TEAMWORK_COMPANY"]
-#   c.api_key = ENV["TEAMWORK_API_KEY"]
-# end

@@ -9,3 +9,16 @@ class TestTeamwork < Minitest::Test
     assert false
   end
 end
+
+
+# 200
+# 400
+# 500
+# authorized
+# unauthorized
+# wrong url
+# params - subtasks, date filter
+# api_key
+# company
+# get blank
+# body, headers, status
