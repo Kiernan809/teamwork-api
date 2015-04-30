@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Project
       # http://developer.teamwork.com/projectsapi
-      def << self
+      class << self
         # GET /projects.json
         def all(params = {})
           response = API.get "projects.json", params
@@ -31,7 +31,7 @@ module Teamwork
 
     class Role
       # http://developer.teamwork.com/projectroles
-      def << self
+      class << self
         # GET /projects/{id}/roles.json
         def project(id, params = {})
           response = API.get "projects/#{id}/roles.json", params
@@ -46,7 +46,7 @@ module Teamwork
 
     class Email
       # http://developer.teamwork.com/projectemailaddresses
-      def << self
+      class << self
         # GET /projects/{id}/emailaddress.json
         def project(id, params = {})
           response = API.get "projects/#{id}/emailaddress.json", params

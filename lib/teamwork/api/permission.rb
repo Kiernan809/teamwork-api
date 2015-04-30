@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Permission
       # http://developer.teamwork.com/permissions
-      def << self
+      class << self
         # POST /projects/{id}/people/{id}.json
         # PUT /projects/{id}/people.json
         # DELETE /projects/{id}/people/{id}.json

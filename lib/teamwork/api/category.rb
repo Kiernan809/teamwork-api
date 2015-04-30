@@ -3,10 +3,15 @@ module Teamwork
     module Category
       class Message
         # http://developer.teamwork.com/messagecategories
-        def << self
-          # POST /projects/{project_id}/messageCategories.json
+        class << self
+          # POST /projects/#{project_id}/messageCategories.json
           # GET /messageCategories/{id}.json
-          # GET /projects/{project_id}/messageCategories.json
+
+          # GET /projects/#{project_id}/messageCategories.json
+          def project(id, params = {})
+            response = API.get "/projects/#{project_id}/messageCategories.json", params
+          end
+
           # PUT /messageCategories/{id}.json
           # DELETE /messageCategories/{id}.json
         end
@@ -14,10 +19,15 @@ module Teamwork
 
       class File
         # http://developer.teamwork.com/filecategories
-        def << self
-          # POST /projects/{project_id}/fileCategories.json
+        class << self
+          # POST /projects/#{project_id}/fileCategories.json
           # GET /fileCategories/{id}.json
-          # GET /projects/{project_id}/fileCategories.json
+
+          # GET /projects/#{project_id}/fileCategories.json
+          def project(id, params = {})
+            response = API.get "/projects/#{project_id}/fileCategories.json", params
+          end
+
           # PUT /fileCategories/{id}.json
           # DELETE /fileCategories/{id}.json
         end
@@ -26,10 +36,15 @@ module Teamwork
 
       class Notebook
         # http://developer.teamwork.com/notebookcategories
-        def << self
-          # POST /projects/{project_id}/notebookCategories.json
+        class << self
+          # POST /projects/#{project_id}/notebookCategories.json
           # GET /notebookCategories/{id}.json
-          # GET /projects/{project_id}/notebookCategories.json
+
+          # GET /projects/#{project_id}/notebookCategories.json
+          def project(id, params = {})
+            response = API.get "/projects/#{project_id}/notebookCategories.json", params
+          end
+
           # PUT /notebookCategories/{id}.json
           # DELETE /notebookCategories/{id}.json
         end
@@ -37,10 +52,15 @@ module Teamwork
 
       class Link
         # http://developer.teamwork.com/linkcategories
-        def << self
+        class << self
           # POST /projects/#{project_id}/linkCategories.json
           # GET /linkCategories/#{id}.json
+
           # GET /projects/#{project_id}/linkCategories.json
+          def project(id, params = {})
+            response = API.get "/projects/#{project_id}/linkCategories.json", params
+          end
+
           # PUT /linkCategories/#{id}.json
           # DELETE /linkCategories/#{id}.json
         end
@@ -48,7 +68,7 @@ module Teamwork
 
       class Project
         # http://developer.teamwork.com/projectcategories
-        def << self
+        class << self
           # POST /projectcategories.json
           # GET /projectCategories/{id}.json
           # GET /projectCategories.json

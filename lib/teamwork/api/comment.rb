@@ -4,27 +4,30 @@ module Teamwork
       # http://developer.teamwork.com/comments
 
       class << self
-        def recent(resource, id)
-          # GET /{resource}/{resource_id}/comments.json
+        # GET /{resource}/{resource_id}/comments.json
+        def resource(type, id, params = {})
+          response = API.get "/#{type}/#{resource_id}/comments.json", params
         end
 
-        def comment(id)
-          # GET /comments/{comment_id}.json
+        # GET /comments/{comment_id}.json
+        def get(id, params = {})
+          response = API.get "/comments/#{comment_id}.json", params
         end
+
+        # POST /{resource}/{resource_id}/comments.json
         def create(resource, id)
-          # POST /{resource}/{resource_id}/comments.json
         end
 
+        # PUT /comments/{id}.json
         def update(id)
-          # PUT /comments/{id}.json
         end
 
+        # DELETE /comments/{id}.json
         def delete(id)
-          # DELETE /comments/{id}.json
         end
 
+        # PUT /comments/{id}/markread.json
         def read(id)
-          # PUT /comments/{id}/markread.json
         end
       end
     end

@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Message
       # http://developer.teamwork.com/messages
-      def << self
+      class << self
         # POST /projects/{project_id}/posts.json
         # GET /posts/{id}.json
         # GET /projects/{project_id}/posts.json
@@ -18,7 +18,7 @@ module Teamwork
 
     class Reply
       # http://developer.teamwork.com/messagereplies
-      def << self
+      class << self
         # POST /messages/{message_id}/messageReplies.json
         # GET /messageReplies/{id}.json
         # GET /messages/{id}/replies.json

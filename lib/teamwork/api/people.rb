@@ -2,7 +2,7 @@ module Teamwork
   module API
     class People
       # http://developer.teamwork.com/people
-      def << self
+      class << self
         # POST /people.json
         # PUT /people/{id}.json
         # DELETE /people/{id}.json
@@ -17,7 +17,7 @@ module Teamwork
 
     class Status
       # http://developer.teamwork.com/people-status
-      def << self
+      class << self
         # POST /me/status.json
         # POST /people/{person_id}/status.json
         # PUT /me/status/{status_id}.json

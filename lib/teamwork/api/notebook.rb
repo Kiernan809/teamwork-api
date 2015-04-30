@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Notebook
       # http://developer.teamwork.com/notebooks
-      def << self
+      class << self
         # GET /notebooks.json
         # GET /projects/{project_id}/notebooks.json
         # GET /notebookCategories/{id}/notebooks.json

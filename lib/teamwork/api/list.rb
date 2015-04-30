@@ -2,7 +2,7 @@ module Teamwork
   module API
     class List
       # http://developer.teamwork.com/tasklists
-      def << self
+      class << self
 
         # GET /todo_lists/{id}.json
         def get(id, params = {})

@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Link
       # http://developer.teamwork.com/links
-      def << self
+      class << self
         # GET /links.json
         # GET /projects/{project_id}/links.json
         # GET /links/{link_id}.json

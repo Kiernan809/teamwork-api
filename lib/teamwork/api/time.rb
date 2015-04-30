@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Time
       # http://developer.teamwork.com/timetracking
-      def << self
+      class << self
         # GET /time_entries.json
         # GET /projects/{project_id}/time_entries.json
         # GET /todo_items/{todo_item_id}/time_entries.json

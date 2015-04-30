@@ -2,7 +2,7 @@ module Teamwork
   module API
     class Milestone
       # http://developer.teamwork.com/milestones
-      def << self
+      class << self
         # GET /milestones.json
         # GET /projects/{project_id}/milestones.json
         # GET /milestones/{milestone_id}.json
