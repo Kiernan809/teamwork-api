@@ -1,4 +1,3 @@
-require 'logger'
 require 'faraday'
 require 'faraday_middleware'
 require 'json'

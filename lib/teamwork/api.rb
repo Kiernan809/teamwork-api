@@ -33,16 +33,12 @@ module Teamwork
         config.get url, params
       end
 
-      def log
-        @logger ||= Logger.new @configuration.logger
-      end
     end
 
     class Client
-      attr_accessor :company, :api_key, :connection, :logger
+      attr_accessor :company, :api_key, :connection
 
       def initialize
-        @logger = 'API.log'
         @company = nil
         @api_key = nil
       end
