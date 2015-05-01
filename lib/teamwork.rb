@@ -13,7 +13,7 @@ module Teamwork
     def initialize(company, api_key)
       @company = company
       @api_key = api_key
-      @connection = Faraday.new url: "http://#{company}.teamwork.com/" do |con|
+      @connection = Faraday.new url: "http://#{@company}.teamwork.com/" do |con|
         con.request :multipart
         con.request :json
         con.request :url_encoded
@@ -21,7 +21,7 @@ module Teamwork
         con.adapter :net_http
 
         con.headers[:cache_control] = 'no-cache'
-        con.basic_auth(api_key, '')
+        con.basic_auth(@api_key, '')
       end
     end
 
