@@ -30,12 +30,12 @@ module Teamwork
       response.body["activity"]
     end
 
-    def taskList(id, params = {})
+    def list(id, params = {})
       response = @connection.get "todo_lists/#{id}.json", params
       response.body["todo-list"]
     end
 
-    def projectTaskLists(id, params = {})
+    def project_lists(id, params = {})
       response = @connection.get "projects/#{id}/todo_lists.json", params
       response.body["todo-lists"]
     end
@@ -47,7 +47,7 @@ module Teamwork
     end
 
     # GET /tasklists/{id}/tasks.json
-    def taskListTasks(id, params = {})
+    def list_tasks(id, params = {})
       response = @connection.get "tasklists/#{id}/tasks.json", params
       response.body["todo-items"]
     end
