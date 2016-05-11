@@ -9,6 +9,12 @@ module Teamwork
       response.body["projects"]
     end
 
+    # GET /companies/{id}/projects.json
+    def company(id, params = {})
+      response = @api.get "/companies/#{id}/projects.json", params
+      response.body["projects"]
+    end
+
 
     # # Retrieve All Time Entries for a Project
     def times(id, params = {})
