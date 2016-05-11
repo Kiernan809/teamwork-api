@@ -24,7 +24,7 @@ module Teamwork
 
     # GET /projects/{id}/time/total.json
     def time(id, params = {})
-      response = @api.delete "/time/total.json", params
+      response = @api.get "/projects/#{id}/time/total.json", params
       response.body["time-totals"]
     end
 

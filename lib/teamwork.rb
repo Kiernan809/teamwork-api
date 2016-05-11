@@ -1,4 +1,26 @@
-Dir[File.expand_path('./teamwork/*.rb', __FILE__)].each{ |file| require file }
+require 'teamwork/account'
+require 'teamwork/activity'
+require 'teamwork/billing'
+require 'teamwork/calendar'
+require 'teamwork/categories'
+require 'teamwork/comments'
+require 'teamwork/companies'
+require 'teamwork/files'
+require 'teamwork/links'
+require 'teamwork/messages'
+require 'teamwork/milestones'
+require 'teamwork/notebooks'
+require 'teamwork/people'
+require 'teamwork/permissions'
+require 'teamwork/projects'
+require 'teamwork/reminders'
+require 'teamwork/risks'
+require 'teamwork/roles'
+require 'teamwork/statuses'
+require 'teamwork/tags'
+require 'teamwork/tasks'
+require 'teamwork/time'
+require 'teamwork/version'
 
 require 'faraday'
 require 'faraday_middleware'
@@ -35,73 +57,73 @@ module Teamwork
     end
 
     def account
-        @account ||= Account.new(@connection)
+        @account ||= Teamwork::Account.new(@connection)
     end
     def activity
-        @activity ||= Activity.new(@connection)
+        @activity ||= Teamwork::Activity.new(@connection)
     end
     def billing
-        @billing ||= Billing.new(@connection)
+        @billing ||= Teamwork::Billing.new(@connection)
     end
     def calendar
-        @calendar ||= Calendar.new(@connection)
+        @calendar ||= Teamwork::Calendar.new(@connection)
     end
     def categories
-        @categories ||= Categories.new(@connection)
+        @categories ||= Teamwork::Categories.new(@connection)
     end
     def comments
-        @comments ||= Comments.new(@connection)
+        @comments ||= Teamwork::Comments.new(@connection)
     end
     def companies
-        @companies ||= Companies.new(@connection)
+        @companies ||= Teamwork::Companies.new(@connection)
     end
     def files
-        @files ||= Files.new(@connection)
+        @files ||= Teamwork::Files.new(@connection)
     end
     def links
-        @links ||= Links.new(@connection)
+        @links ||= Teamwork::Links.new(@connection)
     end
     def messages
-        @messages ||= Messages.new(@connection)
+        @messages ||= Teamwork::Messages.new(@connection)
     end
     def milestones
-        @milestones ||= Milestones.new(@connection)
+        @milestones ||= Teamwork::Milestones.new(@connection)
     end
     def notebooks
-        @notebooks ||= Notebooks.new(@connection)
+        @notebooks ||= Teamwork::Notebooks.new(@connection)
     end
     def people
-        @people ||= People.new(@connection)
+        @people ||= Teamwork::People.new(@connection)
     end
     def permissions
-        @permissions ||= Permissions.new(@connection)
+        @permissions ||= Teamwork::Permissions.new(@connection)
     end
     def projects
-        @projects ||= Projects.new(@connection)
+        @projects ||= Teamwork::Projects.new(@connection)
     end
     def reminders
-        @reminders ||= Reminders.new(@connection)
+        @reminders ||= Teamwork::Reminders.new(@connection)
     end
     def risks
-        @risks ||= Risks.new(@connection)
+        @risks ||= Teamwork::Risks.new(@connection)
     end
     def roles
-        @roles ||= Roles.new(@connection)
+        @roles ||= Teamwork::Roles.new(@connection)
     end
     def statuses
-        @statuses ||= Statuses.new(@connection)
+        @statuses ||= Teamwork::Statuses.new(@connection)
     end
     def tags
-        @tags ||= Tags.new(@connection)
+        @tags ||= Teamwork::Tags.new(@connection)
     end
     def tasks
-        @tasks ||= Tasks.new(@connection)
+        @tasks ||= Teamwork::Tasks.new(@connection)
     end
     def time
-        @time ||= Time.new(@connection)
+        @time ||= Teamwork::Time.new(@connection)
     end
     def version
-        @version ||= Version.new(@connection)
+        @version ||= Teamwork::Version.new(@connection)
     end
 
     # def activity(params = {})
