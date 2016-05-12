@@ -22,10 +22,11 @@ module Teamwork
       response.body["time-entries"]
     end
 
+
     # GET /projects/{id}/time/total.json
     def time(id, params = {})
       response = @api.get "/projects/#{id}/time/total.json", params
-      response.body["time-totals"]
+      response.body["projects"][0]
     end
 
   end
